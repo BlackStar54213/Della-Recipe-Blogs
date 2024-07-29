@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+
+    <body>
+        <style>
+            main {
+                background-color: rgb(226, 226, 226);
+                font-size: x-large;
+                overflow: hidden;
+                padding: 30px;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+
+            h3 {
+                font-size: 28px;
+            }
+
+            p {
+                width: 50%;
+            }
+        </style>
+        <header>
+            <h1>
+                <%= full.title %>
+            </h1>
+        </header>
+        <main>
+            <button class="delete" data-doc="<%= full._id %>"> Delete</button>
+            <h3>Snippet: <%= full.snippet %>
+            </h3>
+
+            <p>Recipe: <br>
+                <%= full.body %>
+            </p>
+        </main>
+        <%- include('./partials/footer.ejs') %>
+            <script>
+                const trash = document.querySelector("button.delete");
+
+                trash.addEventListener('click', () => {
+                    const endpoint = `/blogs/${trash.dataset.doc}`;
+
+                    fetch(endpoint, { method: 'DELETE' })
+                        .then((response) => response.json())
+                        .then((data) => window.location.href = data.redirect)
+                        .catch((err) => console.log(err));
+                })
+            </script>
+    </body>
+
+</html>

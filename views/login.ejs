@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+    <body>
+        <form action="/login" method="post">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required placeholder="example@gmail.com"><br>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required placeholder="*******"><br>
+            <button type="submit">Log in</button>
+        </form>
+        <p>Don't have an account? <a href="/register">Create an account</a></p>
+    </body>
+    <%- include("./partials/footer.ejs") %>
+
+</html>

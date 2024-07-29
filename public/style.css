@@ -1,0 +1,191 @@
+body {
+    font-family: serif;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    padding: 10px;
+    list-style: none;
+}
+
+nav {
+    position: relative;
+}
+
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50px;
+
+}
+
+header {
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a {
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 3px;
+}
+
+nav a:hover {
+    background-color: blueviolet;
+    transition: all .6s;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+}
+
+
+h2 {
+    font-size: 40px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 25px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    margin-left: 10%;
+}
+
+.box p {
+    margin: 0%;
+}
+
+.box h3 {
+    margin: 0%;
+}
+
+.box {
+    width: 350px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: blueviolet;
+    color: white;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 20px;
+    gap: 15px;
+}
+
+footer {
+    position: relative;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    background-color: rgb(204, 204, 204);
+    margin-top: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.contact {
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    display: flex;
+    gap: 40px;
+
+}
+
+sub {
+    font-size: 15px;
+}
+
+footer a {
+    color: black;
+}
+
+.searchform {
+    position: absolute;
+    top: 3%;
+    left: 4%;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.searchform button {
+    height: 35px;
+    margin: 0%;
+    border: 1px rebeccapurple solid;
+}
+
+.searchform input {
+    width: 500px;
+    height: 35px;
+    border-radius: 3px;
+}
+
+.inputform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 10%;
+    background-color: blueviolet;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+label {
+    font-size: 20px;
+    margin-bottom: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+input {
+    padding: 0px 10px;
+    height: 30px;
+    width: 30%;
+    border-radius: 2px;
+    border: 1px solid black;
+    outline: none;
+    margin-bottom: 14px;
+}
+
+button {
+    font-size: 18px;
+    color: blueviolet;
+    border: 2px solid blueviolet;
+    border-radius: 3px;
+    height: 50px;
+    width: 160px;
+    margin-top: 5px;
+}
+
+button:hover {
+    color: white;
+    background-color: blueviolet;
+    border: white 2px solid;
+    transition: all .6s;
+}
+
+.delete {
+    position: absolute;
+    top: 12%;
+    right: 10%;
+}
+
+.box h3 {
+    font-family: raleway;
+}

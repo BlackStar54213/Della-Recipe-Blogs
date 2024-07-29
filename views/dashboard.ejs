@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+    <body>
+        <style>
+            body {
+                width: 100%;
+            }
+
+            main {
+                width: 100%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .side {
+                background-color: rgb(197, 192, 192);
+                width: 20%;
+                height: 90vh;
+                padding: 10px 20px 0px 0px;
+            }
+
+            .side li {
+                list-style: none;
+                margin-top: 20px;
+                padding: 5px;
+            }
+
+            .side a {
+                font-size: 20px;
+                color: black;
+                text-decoration: none;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+
+            .side a :hover {
+                background-color: black;
+                color: white;
+                transition: all .6s;
+            }
+
+            #upload {
+                display: none;
+            }
+
+            .inputform {
+                width: 100%;
+            }
+
+            .myblog {
+                overflow-y: scroll;
+                height: 80vh;
+            }
+
+            .upload {
+                width: 70%;
+                height: 95vh;
+            }
+
+            .prof p {
+                font-size: 20px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+        </style>
+        <%- include('./partials/nav.ejs') %>
+            <main>
+                <section class="side">
+                    <ul>
+                        <li>
+                            <div class="prof">
+                                <h3>Profile</h3><br>
+                                <p>Name: <%= profile.name %>
+                                </p>
+                                <p>Email: <%= profile.email %>
+                                </p>
+                            </div>
+                        </li>
+                        <a id="myblogsbtn">
+                            <li>My Recipes</li>
+                        </a>
+                        <a id="uploadbtn">
+                            <li>Upload Recipe</li>
+                        </a>
+                    </ul>
+                </section>
+                <section class="myblog" id="myblogs">
+                    <div class="content">
+                        <% if(blogs.length> 0){ %>
+                            <% for (let index=0; index < blogs.length; index++) { %>
+                                <a href="/adminblogs/<%= blogs[index]._id %>" class="single">
+                                    <div class="box">
+                                        <h3>
+                                            <%= blogs[index].title %>
+                                        </h3>
+                                        <p>
+                                            <%= blogs[index].snippet %>
+                                        </p>
+
+                                    </div>
+                                </a>
+                                <% }%>
+                                    <% }else {%>
+                                        <h3>There's nothing on currently on the Menu</h3>
+                                        <% } %>
+                    </div>
+                </section>
+                <section class="upload" id="upload">
+
+                    <form action="postblog" method="post" class="inputform">
+                        <h2>fill the form</h2>
+                        <label for="title">Food Name</label>
+                        <input type="text" name="title" id="title" required>
+                        <label for="snippet">Personal Opinion</label>
+                        <input type="text" name="snippet" id="snippet" required>
+                        <label for="body">Recipe</label>
+                        <textarea type="text" name="body" id="body" cols="60" rows="10" required></textarea>
+                        <button>Submit</button>
+                    </form>
+                </section>
+            </main>
+            <%- include('./partials/footer.ejs') %>
+    </body>
+    <script>
+        const uploadform = document.getElementById('upload');
+        const myblogs = document.getElementById("myblogs")
+        document.getElementById("uploadbtn").addEventListener('click', () => {
+            uploadform.style.display = "flex";
+            myblogs.style.display = 'none';
+        })
+        document.getElementById("myblogsbtn").addEventListener('click', () => {
+            uploadform.style.display = "none";
+            myblogs.style.display = 'flex';
+        })
+    </script>
+
+</html>

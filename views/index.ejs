@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+
+    <body>
+        <%- include('./partials/nav.ejs') %>
+            <header>
+
+                <h1>Welcome to Della Recipe Blogs
+                </h1>
+            </header>
+            <main>
+                <h2>Our most recent additions</h2>
+                <div class="content">
+                    <% if(blogs.length> 0){ %>
+                        <% if(blogs.length> 3){ %>
+                            <% for (let index=blogs.length-3; index<blogs.length; index++) { %>
+                                <a href="/blogs/<%= blogs[index]._id %>" class="single">
+                                    <div class="box">
+
+                                        <h3>
+                                            <%= blogs[index].title %>
+                                        </h3>
+                                        <p>
+                                            <%= blogs[index].snippet %>
+                                        </p>
+
+                                    </div>
+                                </a>
+                                <% }%>
+                                    <% }else {%>
+                                        <% for (let index=0; index<blogs.length; index++) { %>
+                                            <a href="/blogs/<%= blogs[index]._id %>" class="single">
+                                                <div class="box">
+
+                                                    <h3>
+                                                        <%= blogs[index].title %>
+                                                    </h3>
+                                                    <p>
+                                                        <%= blogs[index].snippet %>
+                                                    </p>
+
+                                                </div>
+                                            </a>
+                                            <% }%>
+                                                <% }}else {%>
+                                                    <h3>There's nothing on currently on the Menu</h3>
+                                                    <% } %>
+                </div>
+            </main>
+            <%- include('./partials/footer.ejs') %>
+    </body>
+
+</html>
