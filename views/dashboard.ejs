@@ -65,6 +65,41 @@
                 font-size: 20px;
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             }
+
+            @media only screen and (max-width: 900px) {
+                main {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .side {
+                    width: 100%;
+                    height: fit-content;
+                    padding-top: 60px;
+                    padding-right: 0%;
+                }
+
+                body {
+                    margin: 0%;
+                }
+
+                .upload {
+                    width: 100%;
+                    box-sizing: border-box;
+                    padding-left: 0%;
+
+                }
+
+                .upload input {
+                    width: 80%;
+                    border: none;
+                }
+
+                textarea {
+                    width: 90%;
+                }
+            }
         </style>
         <%- include('./partials/nav.ejs') %>
             <main>
@@ -88,6 +123,7 @@
                     </ul>
                 </section>
                 <section class="myblog" id="myblogs">
+                    <h3>My Blogs</h3>
                     <div class="content">
                         <% if(blogs.length> 0){ %>
                             <% for (let index=0; index < blogs.length; index++) { %>
@@ -111,6 +147,8 @@
                 <section class="upload" id="upload">
 
                     <form action="postblog" method="post" class="inputform">
+                        <h1>Upload New Recipe</h1>
+
                         <h2>fill the form</h2>
                         <label for="title">Food Name</label>
                         <input type="text" name="title" id="title" required>

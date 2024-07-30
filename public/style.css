@@ -163,6 +163,10 @@ input {
     margin-bottom: 14px;
 }
 
+#menu {
+    display: none;
+}
+
 button {
     font-size: 18px;
     color: blueviolet;
@@ -188,4 +192,92 @@ button:hover {
 
 .box h3 {
     font-family: raleway;
+}
+
+@media only screen and (max-width: 900px) {
+    h1 {
+        font-size: 37px;
+        width: 70%;
+        margin-top: 80px;
+        text-align: center;
+    }
+
+    header {
+        display: flex;
+        justify-content: flex-start;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 17px;
+    }
+
+    header {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box {
+        width: 290px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        font-size: 18px;
+
+    }
+
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0%;
+    }
+
+    .header {
+        padding-top: 40px;
+    }
+
+    nav {
+        background-color: white;
+        padding: 10px;
+        width: 99%;
+        position: fixed;
+    }
+
+    nav input {
+        width: 80%;
+    }
+
+    #menu {
+        display: block;
+        background-color: black;
+        padding: 10px;
+        width: 20px;
+        position: fixed;
+        border-radius: 10px;
+        right: 20px;
+        top: 30px;
+    }
+
+    .searchform {
+        width: 50%;
+        position: relative;
+        top: auto;
+        left: auto;
+        justify-content: flex-start;
+        margin: 5px;
+        padding: 10px;
+    }
+
+    #nav {
+        height: 60px;
+        overflow-y: hidden;
+        transition: all .6s;
+    }
 }

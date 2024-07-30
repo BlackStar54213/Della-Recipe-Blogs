@@ -1,7 +1,8 @@
-<nav>
+<nav id="nav">
     <form action="/search" method="post" class="searchform">
         <input type="search" name="search" id="search" placeholder="Search" required>
         <button>Search</button>
+        <img src="./images/icon-hamburger.svg" alt="" id="menu">
     </form>
     <ul>
         <li><a href="./">Home</a></li>
@@ -9,4 +10,19 @@
         <li><a href="./about">about Us</a></li>
         <li><a href="/dashboard" id="dash">Daashboard</a></li>
     </ul>
+    <script>
+        const menu = document.getElementById('menu');
+        const nav = document.getElementById('nav');
+        let counter = 0;
+        menu.addEventListener('click', () => {
+            if (counter === 0) {
+
+                nav.style.height = "390px";
+                counter++;
+            } else {
+                nav.style.height = "60px";
+                counter--;
+            }
+        })
+    </script>
 </nav>
